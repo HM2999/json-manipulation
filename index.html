@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+ 
+ <style>
+     table{
+border: 1px solid black;
+     }
+     td{
+border: 1px solid black;
+width: 150px;
+     }
+ </style>
+</head>
+<body>
+    
+<div id="result"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+
+//     $.get( "liste-apprenants.json", function( data ) {
+//   $( ".result" ).html( data );
+//  document.getElementById("result").innerHTML +="<ul>";
+// data.forEach(element => {
+//     // console.log(element);
+//     document.getElementById("result").innerHTML +="<li>"+element.nom+"</li>"
+//     // $( ".result" ).html("bonjour") ;
+// });
+// document.getElementById("result").innerHTML +="</ul>";
+// });
+
+
+
+
+
+
+
+//start of jquery code 
+
+$.get( "liste-apprenants.json", function( data ) {
+  $( ".result" ).html( data );
+
+  //variable 
+  let str="<table>";
+
+
+//traitement
+data.forEach(element => {
+   
+  str +="<tr><td>"+element.nom+"</td></tr>"
+ 
+});
+
+str+="</table>"
+//afficahge 
+document.getElementById("result").innerHTML =str;
+ 
+});
+
+</script>
+</body>
+</html>
